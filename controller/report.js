@@ -132,18 +132,21 @@ function BarChart() {
                     },
                     data: [
                         {
+                            cursor: "pointer",
                             showInLegend: true,
                             legendText: "มาก",
                             color: "#FF4500",
                             dataPoints: BarChart1
                         },
                         {
+                            cursor: "pointer",
                             showInLegend: true,
                             legendText: "ปานกลาง",
                             color: "#FFA500",
                             dataPoints: BarChart2
                         },
                         {
+                            cursor: "pointer",
                             showInLegend: true,
                             legendText: "น้อย",
                             color: "#F5DEB3",
