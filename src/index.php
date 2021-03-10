@@ -201,12 +201,6 @@
             </section>
             <!-- /.content -->
         </div>
-
-        <!-- แจ่งเตือน -->
-        <div class="boxAlert">
-
-        </div>
-
     </div>
 
     <!-- /.content-wrapper -->

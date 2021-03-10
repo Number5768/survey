@@ -134,49 +134,25 @@ function BarChart() {
                         {
                             showInLegend: true,
                             legendText: "มาก",
-                            color: "#0000CD",
+                            color: "#FF4500",
                             dataPoints: BarChart1
                         },
                         {
                             showInLegend: true,
                             legendText: "ปานกลาง",
-                            color: "#DCDCDC",
+                            color: "#FFA500",
                             dataPoints: BarChart2
                         },
                         {
                             showInLegend: true,
                             legendText: "น้อย",
-                            color: "#D2B48C",
+                            color: "#F5DEB3",
                             dataPoints: BarChart3
                         },
                     ]
                 });
             chart.render();
+            $('.canvasjs-chart-credit').hide();
         },
     });
-    
-    // var dataPoints2 = [
-    //     {  y: 30, label: "ข้อที่1" },
-    //     {  y: 20, label: "ข้อที่2" },
-    //     {  y: 10, label: "ข้อที่3" },
-    //     {  y: 10, label: "ข้อที่4" },
-    //     {  y: 10, label: "ข้อที่5" },
-    //     {  y: 10, label: "ข้อที่6" },
-    //     {  y: 10, label: "ข้อที่7" },
-    //     {  y: 10, label: "ข้อที่8" },
-    //     {  y: 10, label: "ข้อที่9" }
-    // ];
-    // var dataPoints3 = [
-    //     {  y: 30, label: "ข้อที่1" },
-    //     {  y: 10, label: "ข้อที่2" },
-    //     {  y: 20, label: "ข้อที่3" },
-    //     {  y: 10, label: "ข้อที่4" },
-    //     {  y: 10, label: "ข้อที่5" },
-    //     {  y: 10, label: "ข้อที่6" },
-    //     {  y: 10, label: "ข้อที่7" },
-    //     {  y: 10, label: "ข้อที่8" },
-    //     {  y: 10, label: "ข้อที่9" }
-    // ]
-    // debugger;
-
 }
