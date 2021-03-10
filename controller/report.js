@@ -1,5 +1,6 @@
 $(document).ready(function () {
     showtables_survey();
+    BarChart();
 });
 
 //เรียกใช้ functionตาราง
@@ -107,4 +108,74 @@ function showDataSet(dataSet) {
             },
         ],
     });
+}
+function BarChart() {
+    $.ajax({
+        url: '../action/action_report.php?op=Bar_Chart',
+        type: 'get',
+        cache: false,
+        success: function (data) {
+            var BarChart = JSON.parse(data);
+            var BarChart1 = BarChart[0];
+            var BarChart2 = BarChart[1];
+            var BarChart3 = BarChart[2];
+            var chart = new CanvasJS.Chart("chartContainer",
+                {
+                    animationEnabled: true,
+                    animationDuration: 2000,
+                    height: 680,
+                    width: 1600,
+                    min: 0,
+                    title: {
+                        text: "แบบสำรวจวัดระดับความพึงพอใจ"
+                    },
+                    data: [
+                        {
+                            showInLegend: true,
+                            legendText: "มาก",
+                            color: "#0000CD",
+                            dataPoints: BarChart1
+                        },
+                        {
+                            showInLegend: true,
+                            legendText: "ปานกลาง",
+                            color: "#DCDCDC",
+                            dataPoints: BarChart2
+                        },
+                        {
+                            showInLegend: true,
+                            legendText: "น้อย",
+                            color: "#D2B48C",
+                            dataPoints: BarChart3
+                        },
+                    ]
+                });
+            chart.render();
+        },
+    });
+    
+    // var dataPoints2 = [
+    //     {  y: 30, label: "ข้อที่1" },
+    //     {  y: 20, label: "ข้อที่2" },
+    //     {  y: 10, label: "ข้อที่3" },
+    //     {  y: 10, label: "ข้อที่4" },
+    //     {  y: 10, label: "ข้อที่5" },
+    //     {  y: 10, label: "ข้อที่6" },
+    //     {  y: 10, label: "ข้อที่7" },
+    //     {  y: 10, label: "ข้อที่8" },
+    //     {  y: 10, label: "ข้อที่9" }
+    // ];
+    // var dataPoints3 = [
+    //     {  y: 30, label: "ข้อที่1" },
+    //     {  y: 10, label: "ข้อที่2" },
+    //     {  y: 20, label: "ข้อที่3" },
+    //     {  y: 10, label: "ข้อที่4" },
+    //     {  y: 10, label: "ข้อที่5" },
+    //     {  y: 10, label: "ข้อที่6" },
+    //     {  y: 10, label: "ข้อที่7" },
+    //     {  y: 10, label: "ข้อที่8" },
+    //     {  y: 10, label: "ข้อที่9" }
+    // ]
+    // debugger;
+
 }

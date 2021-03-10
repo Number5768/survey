@@ -62,6 +62,12 @@
         /* display: none; */
     }
 
+    .nav-item-box-1 {
+        position: relative;
+        cursor: default;
+        /* display: none; */
+    }
+
     .nav-link-box,
     .divMenu {
         color: #fff !important;
@@ -108,11 +114,9 @@
                     <a href="#" class="nav-link text-white">Contact</a>
                 </li>
             </ul>
-
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <!-- Messages Dropdown Menu -->
-                <!-- Notifications Dropdown Menu -->
                 <div class="navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="dropdown user user-menu open">
@@ -122,7 +126,6 @@
                                 <span class="text-light L_name"></span>
                             </a>
                             <ul class="dropdown-menu shadow-lg bg-white rounded" style="padding: 1px;  margin-top: 15px;">
-
                                 <li class="user-header bg-light-blue">
                                     <img src="../img/icon-admin-18.jpg" class="img-circle elevation-2 path_image" alt="User Image" style="width: 70px; height: 70px;" />
                                     <p>
@@ -130,7 +133,6 @@
                                         <small style="font-size: 0.5em;">แบบสำรวจวัดระดับความพึงพอใจ</small>
                                     </p>
                                 </li>
-
                                 <li class="user-footer">
                                     <div class="pull-left">
                                         <div class="row">
@@ -150,7 +152,6 @@
                 <!-- <img src="../img/icon-admin-18.jpg" class="brand-image img-circle elevation-3" style="opacity: 1" /> -->
                 <span class="brand-text font-weight-light text-center" style="font-size: 0.8em;">แบบสำรวจวัดระดับความพึงพอใจ</span>
             </a>
-
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
@@ -163,109 +164,19 @@
                         <span class="text-light L_name"><i class="caret"></i></span>
                     </div>
                 </div>
-
                 <!-- Sidebar Menu -->
                 <nav class="mt-2  bg-dark text-white">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-                    with font-awesome or any other icon font library -->
-                        <!-- <li class="nav-item-box  menu-admin" id="nav-item-box-1">
-                            <div class="nav-link nav-link-box" status="1">
-                                <i class="nav-icon fas fa-user-alt"></i>
-                                <p> สมาชิก
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
+                        <div class="nav-link nav-item-box-1 text-light">
+                            <i class=" nav-icon fas fa-archive"></i>
+                            <p>รายงาน</p>
+                        </div>
+                        <li class="nav-item-box menu-admin">
+                            <div class="nav-link nav-link-box divMenu" attr_link="report.php">
+                                <p class="pl-4">รายคน</p>
                             </div>
-                            <ul class="nav nav-treeview-box" style="display: none;">
-
-                                <div class="nav-link divMenu btnmenu" attr_link="add_member.html">
-                                    <i class=" nav-icon fas fa-angle-right"></i>
-                                    <p>เพิ่มสมาชิก</p>
-                                </div>
-
-                            </ul>
-                            <ul class="nav nav-treeview-box" style="display: none;">
-
-                                <div class="nav-link divMenu btnmenu" attr_link="upde_data.html">
-                                    <i class=" nav-icon fas fa-angle-right"></i>
-                                    <p>แก้ไข/ลบ</p>
-
-                                </div>
-
-                            </ul>
-                        </li> -->
-
-                        <!-- <li class="nav-item-box menu-admin" id="nav-item-box-2">
-                            <div class="nav-link nav-link-box" status="2">
-                                <i class=" nav-icon fas fa-gamepad"></i>
-                                <p>ของเล่น
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </div>
-                            <ul class="nav nav-treeview-box" style="display: none;">
-
-                                <div class="nav-link divMenu btnmenu" attr_link="add_toy.html">
-                                    <i class=" nav-icon fas fa-angle-right"></i>
-                                    <p>เพิ่มของเล่น</p>
-                                </div>
-
-                            </ul>
-                            <ul class="nav nav-treeview-box" style="display: none;">
-
-                                <div class="nav-link divMenu btnmenu" attr_link="toy_data.html">
-                                    <i class=" nav-icon fas fa-angle-right"></i>
-                                    <p>ข้อมูลของเล่น</p>
-                                </div>
-
-                            </ul>
-                        </li> -->
-
-                        <!-- <li class="nav-item-box menu-admin" id="nav-item-box-3">
-                            <div class="nav-link nav-link-box" status="3">
-                                <i class=" nav-icon fas fa-archive"></i>
-                                <p>คลัง
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </div>
-                            <ul class="nav nav-treeview-box" style="display: none;">
-
-                                <div class="nav-link divMenu btnmenu" attr_link="treasury_adde.html">
-                                    <i class=" nav-icon fas fa-angle-right"></i>
-                                    <p>เพิ่ม/แก้ไข จำนวน</p>
-                                </div>
-
-                            </ul>
-                        </li> -->
-
-                        <!-- <li class="nav-item-box menu-user menu-admin" id="nav-item-box-4">
-                            <div class="nav-link nav-link-box" status="4">
-                                <i class="nav-icon fas fa-book"></i>
-                                <p>
-                                    ยืมหนังสือ/อุปกรณ์
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </div>
-                            <ul class="nav nav-treeview-box" style="display: none;">
-
-                                <div class="nav-link divMenu btnmenu" attr_link="borrow.html">
-                                    <i class="nav-icon fas fa-angle-right"></i>
-                                    <p>ยืม</p>
-                                </div>
-
-                                <div class="nav-link divMenu btnmenu" attr_link="reborrow.html">
-                                    <i class="nav-icon fas fa-angle-right "></i>
-                                    <p>คืน</p>
-                                </div>
-
-                            </ul>
-                        </li> -->
-                        <!-- /ตัวเพิ่ม -->
-
-                        <li class="nav-item-box menu-admin" id="nav-item-box-5">
-
-                            <div class="nav-link nav-link-box divMenu" attr_link="report.php" status="5">
-                                <i class=" nav-icon fas fa-archive"></i>
-                                <p>รายงาน </p>
+                            <div class="nav-link nav-link-box divMenu" attr_link="bar_chart.php">
+                                <p class="pl-4">เปรียบเทียบ</p>
                             </div>
                         </li>
                     </ul>
@@ -361,6 +272,8 @@
     <!-- axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- BarChart -->
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 <script src="../controller/menu.js"></script>
 
