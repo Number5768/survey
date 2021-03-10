@@ -130,8 +130,26 @@ function BarChart() {
                     title: {
                         text: "แบบสำรวจวัดระดับความพึงพอใจ"
                     },
+                    legend: {
+                        cursor: "pointer",
+                        itemclick: function (e) {
+                            //console.log("legend click: " + e.dataPointIndex);
+                            //console.log(e);
+                            if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                                e.dataSeries.visible = false;
+                            } else {
+                                e.dataSeries.visible = true;
+                            }
+
+                            e.chart.render();
+                        }
+                    },
                     data: [
                         {
+                            type: "column",
+                            indexLabel: "{y}",
+                            indexLabelPlacement: "outside",
+                            indexLabelOrientation: "horizontal",
                             cursor: "pointer",
                             showInLegend: true,
                             legendText: "มาก",
@@ -139,6 +157,10 @@ function BarChart() {
                             dataPoints: BarChart1
                         },
                         {
+                            type: "column",
+                            indexLabel: "{y}",
+                            indexLabelPlacement: "outside",
+                            indexLabelOrientation: "horizontal",
                             cursor: "pointer",
                             showInLegend: true,
                             legendText: "ปานกลาง",
@@ -146,6 +168,10 @@ function BarChart() {
                             dataPoints: BarChart2
                         },
                         {
+                            type: "column",
+                            indexLabel: "{y}",
+                            indexLabelPlacement: "outside",
+                            indexLabelOrientation: "horizontal",
                             cursor: "pointer",
                             showInLegend: true,
                             legendText: "น้อย",
