@@ -115,6 +115,7 @@ function BarChart() {
         type: 'get',
         cache: false,
         success: function (data) {
+            // debugger;
             var BarChart = JSON.parse(data);
             var BarChart1 = BarChart[0];
             var BarChart2 = BarChart[1];

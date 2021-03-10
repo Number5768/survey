@@ -5,7 +5,6 @@ require '../config/function.php';
 // ตัวแปรที่รับมาจาก in_meterJs
 $op = $_GET['op'];
 
-
 if ($op == 'tables_survey') {
     tables_survey();
 } else if ($op == 'Bar_Chart') {
@@ -113,101 +112,66 @@ function Bar_Chart()
     (SELECT COUNT(p9) FROM survey_data WHERE p9 = '2') AS p9_medium,
     (SELECT COUNT(p9) FROM survey_data WHERE p9 = '3') AS p9_min 
     FROM survey_data LIMIT 1";
-    //  echo $sql; die;
     $dbquery = $conn->query($sql);
     $result = mysqli_fetch_array($dbquery);
-    // $array = json_encode($result);
+
+    $array_max = [];
+    $array_max[0] = intval($result['p1_max']);
+    $array_max[1] = intval($result['p2_max']);
+    $array_max[2] = intval($result['p3_max']);
+    $array_max[3] = intval($result['p4_max']);
+    $array_max[4] = intval($result['p5_max']);
+    $array_max[5] = intval($result['p6_max']);
+    $array_max[6] = intval($result['p7_max']);
+    $array_max[7] = intval($result['p8_max']);
+    $array_max[8] = intval($result['p9_max']);
+
+    $array_medium = [];
+    $array_medium[0] = intval($result['p1_medium']);
+    $array_medium[1] = intval($result['p2_medium']);
+    $array_medium[2] = intval($result['p3_medium']);
+    $array_medium[3] = intval($result['p4_medium']);
+    $array_medium[4] = intval($result['p5_medium']);
+    $array_medium[5] = intval($result['p6_medium']);
+    $array_medium[6] = intval($result['p7_medium']);
+    $array_medium[7] = intval($result['p8_medium']);
+    $array_medium[8] = intval($result['p9_medium']);
+
+    $array_min = [];
+    $array_min[0] = intval($result['p1_min']);
+    $array_min[1] = intval($result['p2_min']);
+    $array_min[2] = intval($result['p3_min']);
+    $array_min[3] = intval($result['p4_min']);
+    $array_min[4] = intval($result['p5_min']);
+    $array_min[5] = intval($result['p6_min']);
+    $array_min[6] = intval($result['p7_min']);
+    $array_min[7] = intval($result['p8_min']);
+    $array_min[8] = intval($result['p9_min']);
 
     $Bar_Chart1 = [];
     $Bar_Chart2 = [];
     $Bar_Chart3 = [];
-    
-    $show_report_detail['y'] = intval($result['p1_max']);
-    $show_report_detail['label'] = "ข้อที่1";
-    array_push($Bar_Chart1, $show_report_detail);
-    $show_report_detail['y'] = intval($result['p2_max']);
-    $show_report_detail['label'] = "ข้อที่2";
-    array_push($Bar_Chart1, $show_report_detail);
-    $show_report_detail['y'] = intval($result['p3_max']);
-    $show_report_detail['label'] = "ข้อที่3";
-    array_push($Bar_Chart1, $show_report_detail);
-    $show_report_detail['y'] = intval($result['p4_max']);
-    $show_report_detail['label'] = "ข้อที่4";
-    array_push($Bar_Chart1, $show_report_detail);
-    $show_report_detail['y'] = intval($result['p5_max']);
-    $show_report_detail['label'] = "ข้อที่5";
-    array_push($Bar_Chart1, $show_report_detail);
-    $show_report_detail['y'] = intval($result['p6_max']);
-    $show_report_detail['label'] = "ข้อที่6";
-    array_push($Bar_Chart1, $show_report_detail);
-    $show_report_detail['y'] = intval($result['p7_max']);
-    $show_report_detail['label'] = "ข้อที่7";
-    array_push($Bar_Chart1, $show_report_detail);
-    $show_report_detail['y'] = intval($result['p8_max']);
-    $show_report_detail['label'] = "ข้อที่8";
-    array_push($Bar_Chart1, $show_report_detail);
-    $show_report_detail['y'] = intval($result['p9_max']);
-    $show_report_detail['label'] = "ข้อที่9";
-    array_push($Bar_Chart1, $show_report_detail);
-    
-    $show_report_detail['y'] = intval($result['p1_medium']);
-    $show_report_detail['label'] = "ข้อที่1";
-    array_push($Bar_Chart2, $show_report_detail);
-    $show_report_detail['y'] = intval($result['p2_medium']);
-    $show_report_detail['label'] = "ข้อที่2";
-    array_push($Bar_Chart2, $show_report_detail);
-    $show_report_detail['y'] = intval($result['p3_medium']);
-    $show_report_detail['label'] = "ข้อที่3";
-    array_push($Bar_Chart2, $show_report_detail);
-    $show_report_detail['y'] = intval($result['p4_medium']);
-    $show_report_detail['label'] = "ข้อที่4";
-    array_push($Bar_Chart2, $show_report_detail);
-    $show_report_detail['y'] = intval($result['p5_medium']);
-    $show_report_detail['label'] = "ข้อที่5";
-    array_push($Bar_Chart2, $show_report_detail);
-    $show_report_detail['y'] = intval($result['p6_medium']);
-    $show_report_detail['label'] = "ข้อที่6";
-    array_push($Bar_Chart2, $show_report_detail);
-    $show_report_detail['y'] = intval($result['p7_medium']);
-    $show_report_detail['label'] = "ข้อที่7";
-    array_push($Bar_Chart2, $show_report_detail);
-    $show_report_detail['y'] = intval($result['p8_medium']);
-    $show_report_detail['label'] = "ข้อที่8";
-    array_push($Bar_Chart2, $show_report_detail);
-    $show_report_detail['y'] = intval($result['p9_medium']);
-    $show_report_detail['label'] = "ข้อที่9";
-    array_push($Bar_Chart2, $show_report_detail);
-    
-    $show_report_detail['y'] = intval($result['p1_min']);
-    $show_report_detail['label'] = "ข้อที่1";
-    array_push($Bar_Chart3, $show_report_detail);
-    $show_report_detail['y'] = intval($result['p2_min']);
-    $show_report_detail['label'] = "ข้อที่2";
-    array_push($Bar_Chart3, $show_report_detail);
-    $show_report_detail['y'] = intval($result['p3_min']);
-    $show_report_detail['label'] = "ข้อที่3";
-    array_push($Bar_Chart3, $show_report_detail);
-    $show_report_detail['y'] = intval($result['p4_min']);
-    $show_report_detail['label'] = "ข้อที่4";
-    array_push($Bar_Chart3, $show_report_detail);
-    $show_report_detail['y'] = intval($result['p5_min']);
-    $show_report_detail['label'] = "ข้อที่5";
-    array_push($Bar_Chart3, $show_report_detail);
-    $show_report_detail['y'] = intval($result['p6_min']);
-    $show_report_detail['label'] = "ข้อที่6";
-    array_push($Bar_Chart3, $show_report_detail);
-    $show_report_detail['y'] = intval($result['p7_min']);
-    $show_report_detail['label'] = "ข้อที่7";
-    array_push($Bar_Chart3, $show_report_detail);
-    $show_report_detail['y'] = intval($result['p8_min']);
-    $show_report_detail['label'] = "ข้อที่8";
-    array_push($Bar_Chart3, $show_report_detail);
-    $show_report_detail['y'] = intval($result['p9_min']);
-    $show_report_detail['label'] = "ข้อที่9";
-    array_push($Bar_Chart3, $show_report_detail);
+
+    for ($n = 0; $n < count($array_max); $n++) {
+        $x = $n + 1;
+        $show_report_detail['y'] = $array_max[$n];
+        $show_report_detail['label'] = "ข้อที่" . $x;
+        array_push($Bar_Chart1, $show_report_detail);
+    }
+    for ($n = 0; $n < count($array_medium); $n++) {
+        $x = $n + 1;
+        $show_report_detail['y'] = $array_medium[$n];
+        $show_report_detail['label'] = "ข้อที่" . $x;
+        array_push($Bar_Chart2, $show_report_detail);
+    }
+    for ($n = 0; $n < count($array_min); $n++) {
+        $x = $n + 1;
+        $show_report_detail['y'] = $array_min[$n];
+        $show_report_detail['label'] = "ข้อที่" . $x;
+        array_push($Bar_Chart3, $show_report_detail);
+    }
 
     $Bar_Chart_show = [];
-    array_push($Bar_Chart_show, $Bar_Chart1,$Bar_Chart2,$Bar_Chart3,);
+    array_push($Bar_Chart_show, $Bar_Chart1, $Bar_Chart2, $Bar_Chart3,);
     echo json_encode($Bar_Chart_show);
-    
 }
